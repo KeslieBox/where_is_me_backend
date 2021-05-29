@@ -1,3 +1,5 @@
 class Interest < ApplicationRecord
-  belongs_to :current_user, :class_name => 'User'
+  has_many :categories
+  has_many :users, through: :categories
+  validates_uniqueness_of :name
 end

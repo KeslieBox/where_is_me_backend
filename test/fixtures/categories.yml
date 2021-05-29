@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  users: one
+  politics: one
+  pronouns: one
+  status: one
+  identities: one
+  looking_fors: one
+  interests: one
+
+two:
+  users: two
+  politics: two
+  pronouns: two
+  status: two
+  identities: two
+  looking_fors: two
+  interests: two

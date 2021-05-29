@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :statuses
+  resources :politics
   resources :interests
   resources :looking_fors
   resources :orientations

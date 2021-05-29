@@ -1,2 +1,0 @@
-class OrientationsController < ApplicationController
-end
