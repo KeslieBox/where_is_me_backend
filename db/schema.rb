@@ -10,26 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_29_084300) do
-
-  create_table "categories", force: :cascade do |t|
-    t.integer "users_id", null: false
-    t.integer "politics_id", null: false
-    t.integer "pronouns_id", null: false
-    t.integer "status_id", null: false
-    t.integer "identities_id", null: false
-    t.integer "looking_fors_id", null: false
-    t.integer "interests_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["identities_id"], name: "index_categories_on_identities_id"
-    t.index ["interests_id"], name: "index_categories_on_interests_id"
-    t.index ["looking_fors_id"], name: "index_categories_on_looking_fors_id"
-    t.index ["politics_id"], name: "index_categories_on_politics_id"
-    t.index ["pronouns_id"], name: "index_categories_on_pronouns_id"
-    t.index ["status_id"], name: "index_categories_on_status_id"
-    t.index ["users_id"], name: "index_categories_on_users_id"
-  end
+ActiveRecord::Schema.define(version: 2021_05_31_145836) do
 
   create_table "identities", force: :cascade do |t|
     t.string "name"
@@ -81,11 +62,46 @@ ActiveRecord::Schema.define(version: 2021_05_29_084300) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "categories", "identities", column: "identities_id"
-  add_foreign_key "categories", "interests", column: "interests_id"
-  add_foreign_key "categories", "looking_fors", column: "looking_fors_id"
-  add_foreign_key "categories", "politics", column: "politics_id"
-  add_foreign_key "categories", "pronouns", column: "pronouns_id"
-  add_foreign_key "categories", "statuses"
-  add_foreign_key "categories", "users", column: "users_id"
+  create_table "users_identities", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "identity_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users_interests", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "interest_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users_looking_fors", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "looking_for_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users_politics", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "politic_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users_pronouns", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "pronoun_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users_statuses", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "status_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 end

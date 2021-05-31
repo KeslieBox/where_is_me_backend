@@ -1,0 +1,2 @@
+class UsersLookingForsController < ApplicationController
+end

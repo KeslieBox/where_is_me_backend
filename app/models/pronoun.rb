@@ -1,5 +1,5 @@
 class Pronoun < ApplicationRecord
-  has_many :categories
-  has_many :user, through: :categories
+  has_many :users_pronouns
+  has_many :users, through: :users_pronouns
   validates_uniqueness_of :name
 end
