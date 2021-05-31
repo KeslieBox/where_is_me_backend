@@ -13,3 +13,4 @@ LookingFor.create([{name: 'friends'}, {name: 'dates'}, {name: 'relationship'}, {
 Interest.create([{name: 'nature'}, {name: 'astrology'}, {name: 'herbalism'}, {name: 'science'}, {name: 'kink'}, {name: 'bdsm'}, {name: 'farming'}, {name: 'gardening'}, {name: 'music'}, {name: 'dancing'}, {name: 'organizing'}, {name: 'art'}, {name: 'photography'}, {name: 'playing music'}, {name: 'movies'}, {name: 'food'}, {name: 'comedy'},])
 Politic.create([{name: 'BLM'}, {name: 'BTLM'}, {name: 'ACAB'}, {name: 'No SWERFS'}, {name: 'No TERFS'}, {name: 'feminist'}, {name: 'communist'}, {name: 'socialist'}, {name: 'leftist'}, {name: 'anarchist'}, {name: 'abolitionist'}])
 Status.create([{name: 'single'}, {name: 'married'}, {name: 'in a relationship'}, {name: 'in an open-relationship'}, {name: "it's complicated"}, {name: 'other'},])
+User.create([{username: 'user1', password: 'user1'}, {username: 'user2', password: 'user2'}, {username: 'user3', password: 'user3'},])
