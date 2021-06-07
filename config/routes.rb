@@ -5,14 +5,15 @@ Rails.application.routes.draw do
   resources :users_identities
   resources :users_interests
   resources :users_pronouns
-  resources :categories
   resources :statuses
   resources :politics
   resources :interests
+  resources :identities
   resources :looking_fors
   resources :orientations
   resources :pronouns
   post '/login', to: 'users#login'
+  post '/authenticate', to: 'users#authenticate'
   resources :users 
  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
