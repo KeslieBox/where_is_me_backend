@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :looking_fors
   resources :orientations
   resources :pronouns
+  post '/match', to: 'users#match'
   post '/login', to: 'users#login'
   post '/authenticate', to: 'users#authenticate'
   resources :users 
