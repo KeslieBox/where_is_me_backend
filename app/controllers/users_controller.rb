@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         if user.save
             render json: user, key_transform: :camel_lower
         else 
-            render json: {message: "Cannot find user with that id"}
+            render json: {message: "User cannot be created"}
         end
     end
 
@@ -24,13 +24,9 @@ class UsersController < ApplicationController
         render json: user, key_transform: :camel_lower
     end
 
-    def match
-        user = User.find_by(id: params[:liker_id])
-        liked_ids = user.liked_ids << params[:liked_id].to_i
-        render json: liked_ids, key_transform: :camel_lower
-    end
 
     def login
+        # user = User.find_by(username: params[:user][:username])
         user = User.find_by(username: params[:user][:username])
         if user && user.authenticate(params[:user][:password])
             render json: user, key_transform: :camel_lower
@@ -63,15 +59,7 @@ class UsersController < ApplicationController
             interest_ids: [],
             looking_for_ids: [],
             politic_ids: [],
-            status_ids: [],
-            liked_matches: [],
-            liker_matches: [],
-            liked_ids: [],
-            liker_ids: [],
-            liked_id: [],
-            liker_id: [],
-            likers: [],
-            liked: []
+            status_ids: []
         )
     end
 end
