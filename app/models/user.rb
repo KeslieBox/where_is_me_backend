@@ -25,4 +25,15 @@ class User < ApplicationRecord
     has_secure_password
     validates :username, presence: true, uniqueness: true
     # validates :password, presence: true
+
+    def mutualMatches
+        mutualMatches = []
+        self.liked.map do |likedUser| 
+            # likedUser if likedUser.liked.include?(self)
+            if likedUser.liked.include?(self)
+                mutualMatches << likedUser
+            end
+        end
+        return mutualMatches
+    end
 end

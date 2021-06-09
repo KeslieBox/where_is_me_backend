@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
     def show 
         user = User.find_by(id: params[:id])
+        user.mutualMatches
         render json: user, key_transform: :camel_lower
     end
 
