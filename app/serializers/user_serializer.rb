@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :mutualMatches 
+  attributes :id, :username, :mutualMatches, :pronoun_ids, :identity_ids, :interest_ids, :looking_for_ids, :politic_ids, :status_ids
   
   # has_many :users_pronouns
   # has_many :users_interests
@@ -16,6 +16,7 @@ class UserSerializer < ActiveModel::Serializer
   has_many :statuses, through: :users_statuses
   has_many :likers, include: true, root: :users  
   has_many :liked, include: true, root: :users
+
   
   
 

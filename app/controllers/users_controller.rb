@@ -19,9 +19,10 @@ class UsersController < ApplicationController
     end
 
     def update
-        # need error handling
         user = User.find_by(id: params[:id])
-        user.update(user_params)
+        if user 
+            user.update(user_params)
+        end
         render json: user, key_transform: :camel_lower
     end
 
