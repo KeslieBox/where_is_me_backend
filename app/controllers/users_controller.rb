@@ -28,7 +28,6 @@ class UsersController < ApplicationController
 
 
     def login
-        # user = User.find_by(username: params[:user][:username])
         user = User.find_by(username: params[:user][:username])
         if user && user.authenticate(params[:user][:password])
             render json: user, key_transform: :camel_lower
@@ -40,6 +39,7 @@ class UsersController < ApplicationController
     end
 
     def authenticate
+        # binding.pry
         user = User.find_by(id: params[:user][:id])
         if user
             render json: user, key_transform: :camel_lower

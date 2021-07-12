@@ -30,7 +30,6 @@ class User < ApplicationRecord
     def mutualMatches
         mutualMatches = []
         self.liked.map do |likedUser| 
-            # likedUser if likedUser.liked.include?(self)
             if likedUser.liked.include?(self)
                 mutualMatches << likedUser
             end
